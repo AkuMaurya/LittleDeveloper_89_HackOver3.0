@@ -249,52 +249,67 @@ MonoBehaviour:
   width: 30
   depth: 30
   verticalPath:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 7452867692327778319, guid: 6a2a56744fd56ba419872f4ca575c94e, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
   HorizontalPath:
-    prefab: {fileID: 0}
+    prefab: {fileID: 7452867692327778319, guid: 6a2a56744fd56ba419872f4ca575c94e, type: 3}
     rotation: {x: 0, y: 0, z: 0}
   TopLeftCorner:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 120738580151947489, guid: 20880ee0b876f7c41ac43f5ac7e945ec, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
   BottomLeftCorner:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 120738580151947489, guid: 20880ee0b876f7c41ac43f5ac7e945ec, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
   BottomRightCorner:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 120738580151947489, guid: 20880ee0b876f7c41ac43f5ac7e945ec, type: 3}
+    rotation: {x: 0, y: -90, z: 0}
   TopRightCorner:
-    prefab: {fileID: 0}
+    prefab: {fileID: 120738580151947489, guid: 20880ee0b876f7c41ac43f5ac7e945ec, type: 3}
     rotation: {x: 0, y: 0, z: 0}
   LeftEnd:
-    prefab: {fileID: 919132149155446097, guid: 572195e8f8761714b886ddea7cf92fb5, type: 3}
+    prefab: {fileID: 2635181682016088952, guid: ccebfc030e13cc04699c2481b71db239, type: 3}
     rotation: {x: 0, y: 180, z: 0}
   RightEnd:
-    prefab: {fileID: 0}
+    prefab: {fileID: 2635181682016088952, guid: ccebfc030e13cc04699c2481b71db239, type: 3}
     rotation: {x: 0, y: 0, z: 0}
   DownEnd:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 2635181682016088952, guid: ccebfc030e13cc04699c2481b71db239, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
   UpEnd:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 2635181682016088952, guid: ccebfc030e13cc04699c2481b71db239, type: 3}
+    rotation: {x: 0, y: -90, z: 0}
   LeftT:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 4776618194650186959, guid: c6e724b9d7fc8744c9e5567e8294e9fa, type: 3}
+    rotation: {x: 0, y: -90, z: 0}
   RightT:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 4776618194650186959, guid: c6e724b9d7fc8744c9e5567e8294e9fa, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
   UpT:
-    prefab: {fileID: 0}
+    prefab: {fileID: 4776618194650186959, guid: c6e724b9d7fc8744c9e5567e8294e9fa, type: 3}
     rotation: {x: 0, y: 0, z: 0}
   DownT:
-    prefab: {fileID: 0}
-    rotation: {x: 0, y: 0, z: 0}
+    prefab: {fileID: 4776618194650186959, guid: c6e724b9d7fc8744c9e5567e8294e9fa, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
   Cross:
-    prefab: {fileID: 0}
+    prefab: {fileID: 195878864133861578, guid: ef407ea56e9aaba4db6cde829d56f371, type: 3}
     rotation: {x: 0, y: 0, z: 0}
   Floor:
-    prefab: {fileID: 0}
+    prefab: {fileID: 8149037421464554987, guid: 68079c4f95ce83b40ab5f00d84adaaf3, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  WallPieceTop:
+    prefab: {fileID: 4704424609426598806, guid: c18c464b78d13ac4aa9d2925fc64061c, type: 3}
+    rotation: {x: 0, y: 0, z: 0}
+  WallPieceBottom:
+    prefab: {fileID: 4704424609426598806, guid: c18c464b78d13ac4aa9d2925fc64061c, type: 3}
+    rotation: {x: 0, y: 180, z: 0}
+  WallPieceLeft:
+    prefab: {fileID: 4704424609426598806, guid: c18c464b78d13ac4aa9d2925fc64061c, type: 3}
+    rotation: {x: 0, y: -90, z: 0}
+  WallPieceRight:
+    prefab: {fileID: 4704424609426598806, guid: c18c464b78d13ac4aa9d2925fc64061c, type: 3}
+    rotation: {x: 0, y: 90, z: 0}
+  Piller:
+    prefab: {fileID: 4602852136491761611, guid: ac7798ba23a50d44ea45d7e26f8ffafc, type: 3}
     rotation: {x: 0, y: 0, z: 0}
 --- !u!4 &773190898
 Transform:
