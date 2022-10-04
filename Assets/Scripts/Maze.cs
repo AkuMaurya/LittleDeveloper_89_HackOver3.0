@@ -2,8 +2,44 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public static class Shuffeling
+{
+    private static System.Random rng = new System.Random();
+
+    public static void Shuffle<T>(this IList<T> list)
+    {
+        int n = list.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            T value = list[k];
+            list[k] = list[n];
+            list[n] = value;
+        }
+    }
+}
+
+public class MapLocation
+{
+    public int x;
+    public int z;
+    public MapLocation(int _x, int _z)
+    {
+        x = _x;
+        z = _z;
+    }
+}
+
 public class Maze : MonoBehaviour
 {
+    public List<MapLocation> directions = new List<MapLocation>()
+    {
+        new MapLocation(1,0),
+        new MapLocation(0,1),
+        new MapLocation(-1,0),
+        new MapLocation(0,-1)
+    };
 
     public int width = 20;
     public int depth = 20;
@@ -29,17 +65,44 @@ public class Maze : MonoBehaviour
         }
     }
 
-    private void Generate()
+    //private void Generate()
+    //{
+    //    for (int z = 1; z < width - 1; z++)
+    //    {
+    //        for (int x = 1; x < depth - 1; x++)
+    //        {
+    //            if (Random.Range(0, 100) > 50)
+    //            {
+    //                map[x, z] = 0;
+    //            }
+    //        }
+    //    }
+    //}
+
+    public void Generate()
     {
-        for(int z=1; z<width-1; z++)
-        {
-            for(int x = 1; x< depth-1;x++)
-            {
-                if(Random.Range(0,100)>50){
-                    map[x,z]=0;
-                }
-            }
-        }
+        Generate(Random.Range(1, width - 1), Random.Range(1, depth - 1));
+    }
+    void Generate(int x, int z)
+    {
+        if (CountSquareNeighbours(x, z) >= 2) return;
+        map[x, z] = 0;
+        directions.Shuffle();
+        Generate(x + directions[0].x, z + directions[0].z);
+        Generate(x + directions[1].x, z + directions[1].z);
+        Generate(x + directions[2].x, z + directions[2].z);
+        Generate(x + directions[3].x, z + directions[3].z);
+    }
+
+    public int CountSquareNeighbours(int x, int z)
+    {
+        int count = 0;
+        if (x <= 0 || x >= width - 1 || z <= 0 || z >= depth - 1) return 5;
+        if (map[x - 1, z] == 0) count++;
+        if (map[x + 1, z] == 0) count++;
+        if (map[x, z + 1] == 0) count++;
+        if (map[x, z - 1] == 0) count++;
+        return count;
     }
 
     void DrawMap()
