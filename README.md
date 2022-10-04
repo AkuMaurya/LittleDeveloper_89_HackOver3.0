@@ -1,2 +1,0 @@
-# LittleDeveloper_89_HackOver3.0
-HackOverChallange
