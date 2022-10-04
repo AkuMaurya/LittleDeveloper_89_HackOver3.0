@@ -42,15 +42,19 @@ public class Maze : MonoBehaviour
         }
     }
 
-    void DrawMap(){
-        for(int z = 0; z<width; z++)
+    void DrawMap()
+    {
+        for (int z = 0; z < width; z++)
         {
-            for(int x = 0;x<depth;x++)
+            for (int x = 0; x < depth; x++)
             {
-                Vector3 pos = new Vector3(x*scale,0,z*scale);
-                GameObject walls = GameObject.CreatePrimitive(PrimitiveType.Cube);
-                walls.transform.localScale=new Vector3(8f,4f,7f);
-                walls.transform.position = pos;
+                if (map[x, z] == 1)
+                {
+                    Vector3 pos = new Vector3(x * scale, 0, z * scale);
+                    GameObject walls = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                    walls.transform.localScale = new Vector3(8f, 4f, 8f);
+                    walls.transform.position = pos;
+                }
             }
         }
     }
