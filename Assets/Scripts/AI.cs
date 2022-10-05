@@ -58,7 +58,6 @@ public class AI : MonoBehaviour
             if(angle!=null&&Vector3.Angle(direction,parent.transform.forward)<90)
             {
                 Fire();
-				// Debug.Log("Fire");
             }
         
 
@@ -95,13 +94,10 @@ public class AI : MonoBehaviour
             if(low)
             {
                 return(Mathf.Atan2(lowAngle,gravity*x)*Mathf.Rad2Deg);
-                
             }
             else{
                 return(Mathf.Atan2(highAngle,gravity*x)*Mathf.Rad2Deg);
             }
-            
-            
         }
         else
         return null;

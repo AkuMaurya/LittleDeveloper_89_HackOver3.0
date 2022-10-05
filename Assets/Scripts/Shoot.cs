@@ -32,16 +32,8 @@ public class Shoot : MonoBehaviour
     void Update()
     {
         Vector3 direction = (target.transform.position - parent.transform.position).normalized;
-        // float X = target.transform.position.x-parent.transform.position.x; 
-        // float Y = target.transform.position.y-parent.transform.position.y; 
-        // float Z = target.transform.position.z-parent.transform.position.z; 
-        // float X = direction.x*direction.x;
-        // float Y = direction.y*direction.y;
-        // float Z = direction.z*direction.z;
-        // float roo = Mathf.Sqrt((X*X)+(Y*Y)+(Z*Z));
-        // Debug.Log("dis"+roo);
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x,0,direction.z));
-        parent.transform.rotation = Quaternion.Slerp(parent.transform.rotation, lookRotation, Time.deltaTime * turnSpeed);  
+        parent.transform.rotation = Quaternion.Slerp(parent.transform.rotation, lookRotation, Time.deltaTime * turnSpeed);
         float? angle = RotateTurret();
         // if( )
 		// {
@@ -61,6 +53,7 @@ public class Shoot : MonoBehaviour
         }
         return angle;
     }
+    
     float? CalculateAngle(bool low)
     {
         Vector3 targetDir = target.transform.position - this.transform.position;
@@ -76,7 +69,6 @@ public class Shoot : MonoBehaviour
             float root = Mathf.Sqrt(underTheSqrRoot);
             float highAngle = sSqr + root;
             float lowAngle = sSqr - root;
-            // Debug.Log(low);
             
             if(low)
             {

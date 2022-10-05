@@ -144,7 +144,7 @@ public class Maze : MonoBehaviour
             {
                 if (map[x, z] == 0)
                 {
-                    player.transform.position = new Vector3(x * scale, 0, z * scale);
+                    player.transform.position = new Vector3(x * scale, 10, z * scale);
                     return;
                 }
             }
