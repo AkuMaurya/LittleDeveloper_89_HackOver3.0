@@ -125,19 +125,18 @@ public class Maze : MonoBehaviour
         Generate();
         AddRooms(3, 4, 6);
         DrawMap();
-        Instantiate(player, new Vector3(10, 10, 10), Quaternion.identity);
         if (player != null)
             PlaceFPC();
         //placed();
-        //placed();
+        placed();
     }
-    //void placed()
-    //{
-    //    PlaceObject[] placeObjects = GetComponents<PlaceObject>();
-    //    if (placeObjects.Length > 0)
-    //        foreach (PlaceObject po in placeObjects)
-    //            po.Go();
-    //}
+    void placed()
+    {
+        PlaceObject[] placeObjects = GetComponents<PlaceObject>();
+        if (placeObjects.Length > 0)
+            foreach (PlaceObject po in placeObjects)
+                po.Go();
+    }
     void Initialize()
     {
         map = new byte[width, depth];
@@ -158,7 +157,7 @@ public class Maze : MonoBehaviour
             {
                 if (map[x, z] == 0)
                 {
-                    player.transform.position = new Vector3(x * scale, 0, z * scale);
+                    player.transform.position = new Vector3(x * scale, 10, z * scale);
                     return;
                 }
             }
