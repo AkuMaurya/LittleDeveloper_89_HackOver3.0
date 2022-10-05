@@ -6,7 +6,7 @@ public class ProjectileMove : MonoBehaviour
 {
     public float speed;
     public float firePoint;
-    //public GameObject Explode;
+    // public GameObject Explode;
     void Start()
     {
         
@@ -23,9 +23,9 @@ public class ProjectileMove : MonoBehaviour
         Destroy(gameObject,5);
     }
 
-    //void OnCollisionEnter(Collision co){
-    //    speed = 0;
-    //    Instantiate(Explode,gameObject.transform.position,Quaternion.identity);
-    //    Destroy(this.gameObject);
-    //}
+    // void OnCollisionEnter(Collision co){
+    //     speed = 0;
+    //     Instantiate(Explode,gameObject.transform.position,Quaternion.identity);
+    //     Destroy(this.gameObject);
+    // }
 }
