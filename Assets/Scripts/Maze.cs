@@ -46,7 +46,7 @@ public class Maze : MonoBehaviour
     public byte[,] map;
     private int scale = 8;
 
-    //public GameObject player;
+    public GameObject player;
 
     [System.Serializable]
     public struct Module
@@ -125,7 +125,9 @@ public class Maze : MonoBehaviour
         Generate();
         AddRooms(3, 4, 6);
         DrawMap();
-        //Instantiate(player, new Vector3(0, 10, 0), Quaternion.identity);
+        Instantiate(player, new Vector3(10, 10, 10), Quaternion.identity);
+        if (player != null)
+            PlaceFPC();
         //placed();
         //placed();
     }
@@ -149,19 +151,19 @@ public class Maze : MonoBehaviour
         }
     }
 
-    // public virtual void PlaceFPC()
-    // {
-    //     for (int z = 0; z < depth; z++)
-    //         for (int x = 0; x < width; x++)
-    //         {
-    //             if (map[x, z] == 0)
-    //             {
-    //                 player.transform.position = new Vector3(x * scale, 0, z * scale);
-    //                 return;
-    //             }
-    //         }
-    // }
-    
+    public void PlaceFPC()
+    {
+        for (int z = 0; z < depth; z++)
+            for (int x = 0; x < width; x++)
+            {
+                if (map[x, z] == 0)
+                {
+                    player.transform.position = new Vector3(x * scale, 0, z * scale);
+                    return;
+                }
+            }
+    }
+
 
     public void Generate()
     {
@@ -249,7 +251,6 @@ public class Maze : MonoBehaviour
                 }
                 else if (Search2D(x, z, new int[] { 5, 1, 5, 0, 0, 0, 5, 1, 5 }))
                 {
-                    // Vector3 pos = Vector3()
                     GameObject obj = Instantiate(HorizontalPath.prefab, new Vector3(x * scale, 0, z * scale), Quaternion.identity);
                     obj.transform.Rotate(HorizontalPath.rotation);
                     piecePlaces[x, z].piece = PieceType.Horizontal_Path;
@@ -259,7 +260,6 @@ public class Maze : MonoBehaviour
                 //Corners
                 else if (Search2D(x, z, new int[] { 5, 1, 5, 0, 0, 1, 1, 0, 5 }))
                 {
-                    // Vector3 pos = Vector3()
                     GameObject obj = Instantiate(TopLeftCorner.prefab, new Vector3(x * scale, 0, z * scale), Quaternion.identity);
                     obj.transform.Rotate(TopLeftCorner.rotation);
                     piecePlaces[x, z].piece = PieceType.Corners;
@@ -267,7 +267,6 @@ public class Maze : MonoBehaviour
                 }
                 else if (Search2D(x, z, new int[] { 1, 0, 5, 5, 0, 1, 5, 1, 5 }))
                 {
-                    // Vector3 pos = Vector3()
                     GameObject obj = Instantiate(BottomLeftCorner.prefab, new Vector3(x * scale, 0, z * scale), Quaternion.identity);
                     obj.transform.Rotate(BottomLeftCorner.rotation);
                     piecePlaces[x, z].piece = PieceType.Corners;
@@ -275,7 +274,6 @@ public class Maze : MonoBehaviour
                 }
                 else if (Search2D(x, z, new int[] { 5, 1, 5, 1, 0, 0, 5, 0, 1 }))
                 {
-                    // Vector3 pos = Vector3()
                     GameObject obj = Instantiate(TopRightCorner.prefab, new Vector3(x * scale, 0, z * scale), Quaternion.identity);
                     obj.transform.Rotate(TopRightCorner.rotation);
                     piecePlaces[x, z].piece = PieceType.Corners;
@@ -283,7 +281,6 @@ public class Maze : MonoBehaviour
                 }
                 else if (Search2D(x, z, new int[] { 5, 0, 1, 1, 0, 0, 5, 1, 5 }))
                 {
-                    // Vector3 pos = Vector3()
                     GameObject obj = Instantiate(BottomRightCorner.prefab, new Vector3(x * scale, 0, z * scale), Quaternion.identity);
                     obj.transform.Rotate(BottomRightCorner.rotation);
                     piecePlaces[x, z].piece = PieceType.Corners;
